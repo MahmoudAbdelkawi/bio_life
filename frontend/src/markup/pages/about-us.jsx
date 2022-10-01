@@ -17,6 +17,7 @@ import bnrImg1 from "../../images/banner/img1.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
+import aboutThumb1 from '../../images/about/bio-1.jpg';
 
 class AboutUs extends Component{
 	
@@ -26,7 +27,7 @@ class AboutUs extends Component{
 				
 				<Header />
 				
-				<div className="page-content bg-white">
+				<div className="page-content bg-white ">
 					
 					<div className="banner-wraper">
 						<div className="page-banner" style={{backgroundImage: "url("+bnrImg1+")"}}>
@@ -48,6 +49,26 @@ class AboutUs extends Component{
 					</div>
 					
 					<AboutSection />
+
+					<div  style={{backgroundColor:"rgba(86, 90, 207, 0.1)" , position:"relative" , top:"16px"}}>
+						<div className='container pt-5'>
+							<div className="card mb-3" style={{maxWidth:" 540px;"}}>
+								<div className="row g-0">
+									<div className="col-md-4 py-2">
+									<img src={aboutThumb1} className="img-fluid rounded-start" alt="..."/>
+									</div>
+									<div className="col-md-8">
+									<div className="card-body">
+										<h5 className="card-title my-3 text-end">Jedda Suadi Arabia</h5>
+										<h5 className="card-title my-3" style={{color:"#444"}}>We offer affordable healthcare and insurance packages to our clients</h5>
+										<p className="card-text text-muted">providing diagnostic and treatment services in several fields. The percentage of auditors reached 32% at the end of 2017, and in comparison, the number of auditors increased by 81% until 2021. Such as dentistry, dermatology, cosmetology, family medicine, nutrition, psychiatry and orthopedics, and the Bio Life Clinic also attracted a larger number of consultants and specialists from the medical staff, and the management of Bio Live is keen to provide the latest technology in all disciplines. The best health and treatment services were provided in accordance with international standards.</p>
+										
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 					
 					<FeatureSection3 />
 					
