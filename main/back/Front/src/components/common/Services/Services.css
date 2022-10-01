@@ -1,0 +1,313 @@
+
+.servicesHome-container{
+  margin-bottom: 70px;
+}
+.other-services-home {
+  position: relative;
+  padding-top: 110px;
+  top: -190px;
+  z-index: 10;
+}
+.svg-servicesHome{
+      vertical-align: middle;
+      fill: blue;
+      margin-top: 20px;
+}
+
+.other-services__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 7;
+}
+
+.other-services__bg > img {
+  opacity: 1;
+  z-index: 8;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.other-services__bg .icon {
+  z-index: 9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: 947px;
+  width: 100%;
+}
+
+.mySwiper-servises{
+  position: relative;
+  top: -60px;
+}
+
+.other-services__bg .icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.other-services .container-servicesHome {
+  position: relative;
+  z-index: 10;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  top: -100px;
+}
+
+.other-services__cards-home{
+  border-radius: 8px;
+  flex: 0 0 350px;
+  max-width: 350px;
+  width: 100%;
+  height: 600px;
+  padding-left: 25px;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  transition: all 0.3s linear;
+  box-shadow: 9.548px 10.239px 35px rgba(0, 0, 0, 0.06);
+}
+
+.other-services__cardsHome > .card-item  {
+  height: 800px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  position: relative;
+  margin: 20px auto;
+  padding-top: 22px;
+  width: 250px;
+}
+
+.other-services__cardsHome > .card-item:hover {
+  border-color: #f22283;
+  -webkit-box-shadow: 15.657px 23.213px 51px rgba(242, 34, 131, 0.2);
+  box-shadow: 15.657px 23.213px 51px rgba(242, 34, 131, 0.2);
+}
+
+.other-services__cardsHome > .card-item > .title {
+  margin-top: 30px;
+  font-size: 23px;
+  letter-spacing: -1px;
+  font-weight: 900;
+  font-family: "Cairo", sans-serif;
+  color: #333333;
+}
+
+.other-services__cardsHome > .card-item > .subtitle {
+  margin-top: 25px;
+  font-size: 13.5px;
+  color: #333333;
+  line-height: 1.5;
+}
+
+.other-services__cardsHome > .card-item > .lists {
+  font-weight: 600;
+  color: #333333;
+  margin-top: 20px;
+  padding-left: 10px;
+  list-style: none;
+  text-align: left;
+}
+
+.other-services__cardsHome > .card-item > .lists li {
+  line-height: 16px;
+  font-size: 15.5px;
+  letter-spacing: -0.15px;
+}
+
+.other-services__cardsHome > .card-item > .lists li i.fa {
+  color: #1f3d9d;
+  margin-right: 7px;
+}
+
+
+.sec-title3 {
+  letter-spacing: -1.6px;
+  line-height: 0.8;
+  font-family: "Cairo", sans-serif;
+  color: #1f3d9d;
+}
+
+.section-title3 {
+  position: relative;
+  text-align: center;
+  top: 60px;
+  left: 3px;
+}
+.section-title-ServicesHome {
+  color: #f22283;
+  font-family: Cairo,sans-serif;
+  font-weight: 800;
+  left: -10px;
+  padding-top: 30px;
+  position: relative;
+  text-align: center;
+  top: -68px;
+}
+
+
+.seperator-ServicesHome {
+  margin-bottom: 30px;
+  width: 35px;
+  height: 3px;
+  background: #07a2f0;
+  border: none;
+  position: relative;
+  left: 680px;
+  top: -45px;
+}
+
+
+
+@media (max-width: 700px) {
+  .other-services__cards > .card-item {
+    height: 900px;
+  }
+  .seperator-ServicesHome {
+    margin-bottom: 30px;
+    width: 35px;
+    height: 3px;
+    background: #07a2f0;
+    border: none;
+    position: relative;
+    left: 352px;
+    top: -35px;
+  }
+
+  .section-title-ServicesHome {
+    position: relative;
+    top: -35px;
+    left: -10px;
+    padding-top: 30px;
+    text-align: center;
+    font-family: "Cairo", sans-serif;
+    color: rgb(242, 34, 131);
+    font-weight: 800;
+  }
+
+}
+
+@media (max-width:900px) {
+  .other-services__cards > .card-item {
+    border-radius: 8px;
+    flex: 0 0 350px;
+    max-width: 350px;
+    height: auto;
+    width: 90%;
+    position: relative;
+    top: 50px;
+    padding: 50px 50px;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    transition: all 0.3s linear;
+    box-shadow: 9.548px 10.239px 35px rgba(0, 0, 0, 0.06);
+    text-align: right;
+  }
+}
+
+@media (max-width: 481px) {
+  .seperator-ServicesHome{
+    margin-bottom: 30px;
+    width: 35px;
+    height: 3px;
+    background: #07a2f0;
+    border: none;
+    position: relative;
+    left: 218px;
+    top: 75px;
+  }
+  .other-services__cards > .card-item {
+    display: flex;
+    /* text-align: center; */
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    box-shadow: 9.548px 10.239px 35pxrgba(0,0,0,.06);
+    flex: 0 0 350px;
+    height: 900px;
+    margin: 0 auto;
+    max-width: 350px;
+    padding: 18px 30px;
+    position: relative;
+    top: 140px!important;
+    transition: all .3s linear;
+    width: 85%;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+}
+
+
+@media (max-width: 375px) {
+  .seperator-ServicesHome {
+    margin-bottom: 30px;
+    width: 35px;
+    height: 3px;
+    background: #07a2f0;
+    border: none;
+    position: relative;
+    left: 193px;
+    top: 99px;
+    visibility: hidden;
+  }
+
+  .section-title-ServicesHome {
+    position: relative;
+    top: 80px;
+    left: -5px;
+    padding-top: 30px;
+    text-align: center;
+    font-family: "Cairo", sans-serif;
+    color: rgb(242, 34, 131);
+    font-weight: 800;
+  }
+
+
+  .other-services__cards > .card-item {
+    display: flex;
+    /* text-align: center; */
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    box-shadow: 9.548px 10.239px 35pxrgba(0,0,0,.06);
+    flex: 0 0 350px;
+    height: 900px;
+    margin: 0 auto;
+    max-width: 350px;
+    padding: 18px 30px;
+    position: relative;
+    top: 140px!important;
+    transition: all .3s linear;
+    width: 150%;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+}
+
+@media (min-width: 390px) {
+  .section-title-ServicesHome {
+    position: relative;
+    top: -92px !important;
+    left: -10px;
+    padding-top: 30px;
+    text-align: center;
+    font-family: "Cairo", sans-serif;
+    color: rgb(242, 34, 131);
+    font-weight: 800;
+}
+}

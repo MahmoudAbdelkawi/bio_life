@@ -1,0 +1,68 @@
+.addAdmin-container{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(188, 188, 188);
+    border-radius: 50px;
+    height: auto;
+    font-size: 2.5rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    direction: rtl;
+}
+.form{
+    margin: 0;
+    padding: 0;
+    display: contents;
+}
+
+.addAdmin-container label{
+    text-align: center;
+    margin-bottom: 10PX;
+}
+
+.addAdmin-container input{
+    width: 700px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: inherit;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.addAdmin-container form select{
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 10PX;
+}
+
+
+.addAdmin-container .supmit-button{
+    background-color: aliceblue;
+    width: 350px;
+    border: solid 2px blue;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    color: blue;
+
+}
+.addAdmin-container .supmit-button:hover{
+    background-color: blue;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+
+
+
+.link{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}

@@ -1,0 +1,217 @@
+.small-doctors{
+  display: block;
+  font-size: .875em;
+}
+.button-32 {
+  background-color: #1f3d9d;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px 15px;
+  text-align: center;
+  
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: 'Cairo', sans-serif;
+  line-height: 20px;
+
+
+}
+
+.button-32:not(:disabled):hover,
+.button-32:not(:disabled):focus {
+  outline: 0;
+  background: #1f3d9d;
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+  
+}
+
+.button-32:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+
+.Book__Appointment{
+
+  text-decoration: none;  
+
+}
+
+
+
+    
+    body {
+        background-color: #eee ;
+        font-family: 'Cairo', sans-serif;
+    }
+    
+    
+    
+    .add {
+        border-radius: 20px
+    }
+    
+    .container-DoctorHome{
+    display: flex;
+    margin-left: 0px;
+    
+    }
+    
+    .Home-card-Dr{
+        padding-bottom: 55px;
+        
+    }
+    
+    
+    
+    .row{
+        object-fit: contain;
+        width: 100%;
+        max-height: 10px;
+        transition: transform 450ms;
+        margin-right: 100px;      
+    }
+    
+    .row:hover{
+        transition: calc(1.08);
+    }
+    
+    
+    
+    .card-DocHome  {
+        border: none;
+        border-radius: 10px;
+        transition: all 1s;
+        cursor: pointer;
+        
+    } 
+        
+    .swiper-slide img{
+      display: block;
+      height: 200px;
+      width: 200px;
+      border-radius: 50%;
+      margin: auto;
+    }
+    
+    .h2doctors {
+            position: relative;
+            left: 42%;
+            font-size: 50px;
+            font-weight: 500;
+    }
+    
+    
+
+    
+    
+
+
+    .section-title-DocHome {
+        position: relative;
+        top:56px;
+        left: -10px;
+        padding-top: 30px;
+        text-align: center;
+        font-family: "Cairo", sans-serif;
+        color: rgb(242, 34, 131);
+        font-weight: 800;
+      }
+   
+      @media (min-width: 390px) {
+        .section-title-DocHome {
+          position: relative;
+          top: 29px !important;
+          left: -10px;
+          padding-top: 30px;
+          text-align: center;
+          font-family: "Cairo", sans-serif;
+          color: rgb(242, 34, 131);
+          font-weight: 800;
+      }
+      }
+
+      .seperator-DocHome {
+        margin-bottom: 30px;
+        width: 35px;
+        height: 3px;
+        background: #07a2f0;
+        border: none;
+        position: relative;
+        left: 680px;
+        top: 50px;
+    }
+   .img-container-doctorsHome{
+    width: 100%;
+   }
+
+      @media screen and (max-width: 481px) {
+      .card-DocHome {
+        border: none;
+        border-radius: 10px;
+        transition: all 1s;
+        cursor: pointer;
+        width: 170px;
+        height: 180px;
+        background-color: white;
+      }
+      .swiper-slide img{
+        display: block;
+        height: 100px;
+        width: 100px;
+      }
+      }
+
+      
+      @media screen and (max-width: 700px) {
+        .seperator-DocHome{
+          margin-bottom: 30px;
+          width: 35px;
+          height: 3px;
+          background: #07a2f0;
+          border: none;
+          position: relative;
+          left: 350px;
+          top: 50px;
+        }
+
+        }
+
+
+        @media screen and (max-width: 375px) {
+          .seperator-DocHome{
+            margin-bottom: 30px;
+            width: 35px;
+            height: 3px;
+            background: #07a2f0;
+            border: none;
+            position: relative;
+            left: 190px;
+            top: 15px;
+          }
+  
+
+          .section-title-DocHome {
+            position: relative;
+            top:20px;
+            left: 0px;
+            padding-top: 30px;
+            text-align: center;
+            font-family: "Cairo", sans-serif;
+            color: rgb(242, 34, 131);
+            font-weight: 800;
+          }
+
+
+          }
+
+
+
+        

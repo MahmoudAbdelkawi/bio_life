@@ -1,0 +1,297 @@
+.container {
+  display: flex;
+  height: auto;
+}
+
+.left {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  animation-name: left;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 1s;
+}
+
+.test {
+  flex: 1 1;
+ display: flex;
+ align-items: flex-end;
+ border-radius: 12px;
+  transition: 1s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+  width: 300px;
+  margin-top: 109px;
+  margin-left: 65px;
+  margin-bottom: 20px;
+}
+
+.right {
+  
+ border-radius: 12px;
+  transition: 1s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+  width: 100%;
+  margin-top: 109px;
+  margin-left: 65px;
+  margin-bottom: 20px;
+}
+
+.Offer-img {
+  margin-left: 120px;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.header {
+  margin-top: 80px;
+}
+
+.header > h2 {
+  margin: 0;
+  color: #4f46a5;
+  text-align: center;
+  font-weight: bold;
+}
+.header > h4 {
+  font-weight: normal;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.4);
+
+}
+
+.form {
+  max-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form > p {
+  text-align: right;
+}
+
+.form > p > a {
+  color: #000;
+  font-size: 14px;
+}
+
+.form-field {
+  width: 150%;
+  height: 46px;
+  padding: 0 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: "Rubik", sans-serif;
+  outline: 0;
+  transition: 0.2s;
+  margin-top: 20px;
+}
+
+.form-field:focus {
+  border-color: #0f7ef1;
+}
+
+.animation {
+  animation-name: move;
+  animation-duration: 0.2s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+}
+
+.a1 {
+  animation-delay: 2s;
+}
+
+.a2 {
+  animation-delay: 2.1s;
+}
+
+.a3 {
+  animation-delay: 2.2s;
+}
+
+.a4 {
+  animation-delay: 2.3s;
+}
+
+.a5 {
+  animation-delay: 2.4s;
+}
+
+.a6 {
+  animation-delay: 2.5s;
+  padding: 12px 10px;
+  border: 0;
+  background: #1f3d9d;
+  border-radius: 3px;
+  margin-top: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+
+  font-family: "Cairo", sans-serif;
+}
+
+@keyframes move {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+@keyframes left {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    padding: 20px 20px;
+    width: 440px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    display: flex;
+    height: auto;
+  }
+  .right {
+    flex: -1 9;
+
+    transition: 2s;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+    width: 368px;
+    margin-top: 123px;
+    margin-bottom: 21px;
+  }
+  .Offer-img {
+    margin-left: 0px;
+    height: 300px;
+    margin-top: 78px;
+    vertical-align: middle;
+    width: 200px;
+}
+  .form {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .left {
+    align-content: flex-start;
+    align-items: stretch;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: left;
+    animation-name: left;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    top: -12px;
+    position: relative;
+    justify-content: center;
+}
+  .form-field{    width: 164%;
+    height: 46px;
+    padding: 0 16px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-family: "Rubik", sans-serif;
+    outline: 0;
+    transition: 0.2s;
+    margin-top: 20px;
+    margin-left: -32px;
+    
+  }
+}
+@media screen {
+  .animation-6{
+    height: 32px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    display: flex;
+    height: auto;
+  }
+  .right {
+    flex: -1 9;
+
+    transition: 6s;
+    background-color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 12px;
+    width: 250px;
+    margin-top: 123px;
+     margin-left: 0px; 
+    margin-bottom: 21px;
+  }
+  .Offer-img {
+    top: -74px;
+    position: relative;
+    vertical-align: middle;
+    width: 140px;
+    height: 250px;
+    border-radius: 12px;
+    margin-left:38px;
+}
+  .offerForm  {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .left {
+    animation-name: left;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+ 
+.header > h2 {
+  text-align: center;
+  color: #4f46a5;
+}
+
+.header {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.form-field {
+  height: 46px;
+  padding: 0 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-family: "Rubik", sans-serif;
+  outline: 0;
+  transition: 0.2s;
+  margin-top: 4px;
+
+}
+}
+

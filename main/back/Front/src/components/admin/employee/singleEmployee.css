@@ -1,0 +1,131 @@
+.singleEmp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    background-color: antiquewhite;
+    margin-top: 20px;
+    margin-right: 25px;
+    direction: rtl;
+    overflow: hidden;
+  }
+.singleEmp ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+.singleEmp ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+.singleEmp:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+.singleEmp-Title{
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px;
+  }
+.price{
+    background-color: azure;
+    width: 350px;
+    font-size: 2rem;
+    border: solid 1px #000;
+}
+.price-p{
+    padding: 0;
+    margin: 10px;
+}
+
+.desc{
+    font-size: 1.5rem;
+}
+
+.desc-title{
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.depart{
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+
+.edit-container{
+  font-size: 1.5rem;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(249, 223, 190);
+}
+
+.delete-container{
+  font-size: 1.5rem;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(249, 223, 190);
+}
+
+.edit-text{
+  width: 50%;
+  margin: 0;
+}
+.edit-icon{
+  width: 50%;
+  margin: 0;
+}
+
+.btn-edit{
+  background-color: aliceblue;
+  color: blue;
+  width: 100px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: solid 2px blue;
+}
+
+.btn-edit:hover{
+  background-color: blue;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.btn-delete{
+  background-color: aliceblue;
+  color: red;
+  width: 100px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: solid 2px red;
+}
+
+.btn-delete:hover{
+  background-color: red;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.image{
+  width: 100%;
+  height: 250px;
+  overflow:hidden;
+}
+.image img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  -webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.image img:hover{
+  -webkit-transform: scale(1.3);
+	transform: scale(1.3);
+}

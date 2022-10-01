@@ -1,0 +1,13 @@
+
+
+.department-title{
+    font-size: 3rem;
+    margin-left: 35%;
+}
+
+.dpartments-container{
+    margin: 100px 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

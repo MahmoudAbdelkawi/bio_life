@@ -1,0 +1,308 @@
+
+.section {
+  padding: 100px 0;
+  position: relative;
+  display: flex;
+
+}
+
+.blog-img{
+  vertical-align: middle;
+  width: 300px;
+  height: 330px;
+  border-radius: 13px;
+  background-size: cover;
+  position: relative;
+  margin-left: 186px;
+  margin-top: 10px;
+}
+
+.container_profile {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.gray-bg {
+  background-color: #f5f5f5;
+}
+
+.profilePage-text{
+  margin-left: 60px;
+}
+
+.img_Avatar {
+  width: 50%;
+  margin-left: 30%;
+}
+
+.profilePage-text h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+@media (max-width:390px) {
+  .profilePage-text {
+      position: relative !important;
+      left: -35px !important;
+      top: 40px;
+}
+.profilePage-avatar {
+  margin-left: 5px !important;
+}
+}
+@media (max-width: 991px) {
+  .profilePage-avatar {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .profilePage-text h3 {
+    font-size: 35px;
+  }
+}
+.profilePage-text h6 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .profilePage-text h6 {
+    font-size: 18px;
+  }
+}
+.profilePage-text p {
+  font-size: 18px;
+  max-width: 450px;
+}
+.profilePage-text p mark {
+  font-weight: 600;
+  color: #20247b;
+}
+
+.profilePage-list {
+  padding-top: 10px;
+}
+.profilePage-list .media {
+  padding: 5px 0;
+}
+.profilePage-list label {
+  color: #20247b;
+  font-weight: 600;
+  width: 88px;
+  margin: 0;
+  position: relative;
+}
+.profilePage-list label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  width: 1px;
+  height: 12px;
+  background: #20247b;
+  -moz-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  margin: auto;
+  opacity: 0.5;
+}
+.profilePage-list p {
+  margin: 0;
+  font-size: 15px;
+}
+
+
+.profilePage-section .counter {
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+}
+.profilePage-section .counter .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profilePage-section .counter .count {
+  font-weight: 700;
+  color: #20247b;
+  margin: 0 0 5px;
+}
+.profilePage-section .counter p {
+  font-weight: 600;
+  margin: 0;
+}
+mark {
+  background-image: linear-gradient(
+    rgba(252, 83, 86, 0.6),
+    rgba(252, 83, 86, 0.6)
+  );
+  background-size: 100% 3px;
+  background-repeat: no-repeat;
+  background-position: 0 bottom;
+  background-color: transparent;
+  padding: 0;
+  color: currentColor;
+}
+.theme-color {
+  color: #fc5356;
+}
+.dark-color {
+  color: #20247b;
+}
+
+.btndoctor {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.btndoctor:hover,
+.btndoctor:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.btndoctor:hover {
+  transform: translateY(-1px);
+}
+
+.btndoctor:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+
+.container_ProfilePage_hero {
+  width: 496px;
+  height: 133px;
+  padding-left: 20px;
+  padding-top: 8px;
+  border-radius: 20px;
+  position: relative;
+  left: 10px;
+  top: -51px;
+}
+
+.ProfilePage_title {
+  text-align: start;
+  font-weight: 800;
+  color: rgb(242, 34, 131);
+}
+.btn-lg {
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: 0.3rem;
+  width: 130px;
+  margin: 30px 0px 5px 0px;
+  text-align: start;
+}
+
+
+.btn-info:hover {
+  color: #ffffff;
+}
+
+.btn-ProfilePage {
+  position: relative;
+  top: 20px;
+  right: 40px;
+}
+
+
+@media (max-width: 700px) {
+
+.container_Appointment_hero_doctor {
+  width: 200px;
+  height: 130px;
+  padding-left: 24px;
+  padding-top: 18px;
+  border-radius: 20px;
+  position: relative;
+  left: -30px;
+  top: 12px;
+}
+}
+
+@media (max-width:414px) {
+  .row-profilePage{
+    display: flex;
+    flex-direction: column-reverse;
+}
+.profilePage-text {
+  margin-left: 30px;
+}
+}
+
+@media (max-width: 375px) {
+  .profilePage-avatar {
+    margin-top: 30px;
+
+}
+
+.profilePage-text {
+  position: relative;
+  left: 155px;
+  top: 186px;
+}
+.container_Appointment_hero_doctor {
+    width: 200px;
+    height: 162px;
+    border-radius: 20px;
+    position: relative;
+    left: -31px;
+    top: -19px;
+}
+
+.blog-img {
+  vertical-align: middle;
+  width: 240px;
+  height: 220px;
+  border-radius: 13px;
+  background-size: cover;
+  position: relative;
+  margin-left: -112px;
+  margin-top: -55px;
+}
+
+.profilePage-text h3 {
+  margin-top: 20px;
+  font-size: 35px;
+}
+.profilePage-text h6 {
+  font-weight: 600;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 10px !important;
+}
+}

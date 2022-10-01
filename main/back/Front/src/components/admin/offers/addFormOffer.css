@@ -1,0 +1,118 @@
+.Addoffer-container{
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(188, 188, 188);
+    border-radius: 50px;
+    height: auto;
+    font-size: 2.5rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    direction: rtl;
+}
+.form{
+    margin: 0;
+    padding: 0;
+    display: contents;
+}
+
+.Addoffer-container label{
+    text-align: center;
+    margin-bottom: 10PX;
+}
+
+.Addoffer-container input{
+    width: 700px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: inherit;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.Addoffer-container select{
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 10PX;
+}
+
+.Addoffer-container .supmit-button{
+    background-color: aliceblue;
+    width: 350px;
+    border: solid 2px blue;
+    border-radius: 10px;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    
+    color: blue;
+
+}
+.Addoffer-container .supmit-button:hover{
+    background-color: blue;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.add-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-button{
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    font-size: 3.5rem;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    color: blue;
+}
+.add-button:hover{
+    color: aliceblue;
+    background-color: blue;
+    cursor: pointer;
+}
+
+
+
+.image-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 35px;
+}
+
+.image-container label {
+    font-size: 80px;
+    color: blue;
+    background-color: aliceblue;
+    border: solid 2px blue;
+    border-radius: 10px;
+    width: 80px;
+}
+
+.image-container label:hover {
+    background-color: blue;
+    color: aliceblue;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+
+
+
+.link{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
