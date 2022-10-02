@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-
+import { getServices } from "../../services/serviceServices";
 // Import Images
 import lingBg2 from "../../images/background/line-bg2.png"
 import animate1 from "../../images/shap/trangle-orange.png"
@@ -18,6 +18,8 @@ import blogGridPic2 from "../../images/blog/grid/pic2.jpg"
 import blogGridPic3 from "../../images/blog/grid/pic3.jpg"
 import blogGridPic4 from "../../images/blog/grid/pic4.jpg"
 import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 // Team Content
 const content = [
@@ -58,9 +60,18 @@ const content = [
 	},
 ]
 
-const ServiceCard = ({id , image , title , points}) =>{
+const ServiceCard = () =>{
 
-
+ // const PF = "https://biollife.herokuapp.com/uploads/";
+ const [services, setServices] = useState([]);
+ useEffect(() => {
+   async function get() {
+	 const serviceResult = await getServices();
+	 setServices(serviceResult.data);
+	 console.log(serviceResult.data)
+   }
+   get();
+ }, []);
 
 
 
@@ -89,12 +100,11 @@ const ServiceCard = ({id , image , title , points}) =>{
 		return(
 			<>
 				
-				<section className="section-area section-sp1 blog-area" key={id} style={{backgroundImage: "url("+lingBg2+")", backgroundPosition: "center", backgroundSize: "cover",}}>
-					<div className="container">
-						<Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none">
-							{content.map((item) =>(
-								<div className="slider-item">
-									<div className="blog-card">
+				<section className="section-area section-sp1 blog-area" style={{backgroundImage: "url("+lingBg2+")", backgroundPosition: "center", backgroundSize: "cover",}}>
+					<div className="container m-auto row">
+						{/* <Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none"> */}
+								{services.map(service=>(<div className="slider-item col-lg-4 col-md-6 mb-30" key={service._id}>
+									<div className="blog-card ">
 										<div className="post-media">
 											<Link to="/blog-details">
                                                 
@@ -105,21 +115,21 @@ const ServiceCard = ({id , image , title , points}) =>{
                                                 
                                             </Link>
 										</div>
-										<div className="post-info">
+										<div className="post-info" style={{direction:'rtl' }}>
 											{/* <ul className="post-meta">
 												<li className="author"><Link to="/blog-details"><img src={item.authorPic} alt=""/>{item.author}</Link></li>
 												<li className="date"><i className="far fa-calendar-alt"></i>{item.date}</li>
 											</ul> */}
-											<h5 className="post-title"><Link to="/blog-details">{title}</Link></h5>	
-                                            <ul style={{listStyleType:'circle'}}>
-                                                {points.map((point , index)=>(<li key={index}>{point}</li>))}
+											<h5 className="post-title"><Link to="/blog-details">{service.title}</Link></h5>	
+                                            <ul style={{listStyleType:'circle' ,  padding:'0 20px'}}>
+                                                {service.points.map((point , index)=>(<li style={{listStyle: 'outside'}} key={index}>{point}</li>))}
                                             </ul>	
 											{/* <Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
 										</div>
 									</div>	
-								</div>
-							))}						
-						</Slider>
+								</div>))}
+										
+						{/* </Slider> */}
 					</div>
 					<img className="pt-img1 animate1" src={animate1} alt=""/>
 					<img className="pt-img2 animate2" src={animate2} alt=""/>

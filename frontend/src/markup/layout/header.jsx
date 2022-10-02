@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Sticky from 'react-stickynode';
 
 // Images
 import logo from '../../images/logo.png';
 import logoWhite from '../../images/logo-white.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import {langActions} from '../../store/changeLang'
 
-class Header extends Component{
-	
-	componentDidMount() {
-		
-		// Search Form Popup
+import LanguageContext from '../../context/LanguageContext';
+
+const Header = () =>{
+	const dispatch = useDispatch()
+
+const { isEnglish , setIsEnglish} = useContext(LanguageContext)
+
+	useEffect(() => {
+	  // Search Form Popup
 		var searchBtn = document.getElementById("quikSearchBtn")
         var searchForm = document.querySelector(".nav-search-bar")
         var closeBtn = document.getElementById("searchRemove")
@@ -54,9 +62,11 @@ class Header extends Component{
                 console.log("close")
             }
         }
-    }
-	
-	render(){
+	  
+	}, [])
+
+	console.log(langActions);
+
 		return(
 			<>
 				<header className="header header-transparent rs-nav">
@@ -75,7 +85,10 @@ class Header extends Component{
 									<ul>
 										<li className="search-btn"><button id="quikSearchBtn" type="button" className="btn-link"><i className="las la-search"></i></button></li>
 										<li className="num-bx"><a href="tel:(+01)999888777"><i className="fas fa-phone-alt"></i> (+01) 999 888 777</a></li>
-										<li className="btn-area"><Link to="/contact-us" className="btn btn-primary shadow">CONTACT US <i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+										<li className="btn-area"><Link to="/form-login" className="btn btn-primary shadow">Login 
+										<FontAwesomeIcon className="ms-2" icon={faUser}/></Link></li>
+
+										<li className="btn-area" onClick={()=>setIsEnglish( !isEnglish )}>change lang</li>
 									</ul>
 								</div>
 								<div className="menu-links navbar-collapse collapse justify-content-end" id="menuDropdown">
@@ -124,7 +137,7 @@ class Header extends Component{
 				
 			</>
 		);
-	}
+
 }
 
 export default Header;

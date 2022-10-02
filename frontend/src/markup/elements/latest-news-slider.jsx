@@ -19,13 +19,18 @@ import blogGridPic3 from "../../images/blog/grid/pic3.jpg"
 import blogGridPic4 from "../../images/blog/grid/pic4.jpg"
 import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFlask, faFlaskVial, faTruck, faTruckMedical, faUserNurse } from '@fortawesome/free-solid-svg-icons';
+
+
+
 // Team Content
 const content = [
 	{ 
 		thumb: blogGridPic1,
 		authorPic: testPic1,
 		author: "John deo",
-		title: "In this hospital there are special surgeon",		
+		title: "Can you get a diflucan prescription online?",		
 		date: "21 July 2021",
 	},
 	{ 
@@ -117,7 +122,67 @@ class LatestNewsSection extends Component{
 					<img className="pt-img3 animate-rotate" src={animateRotate} alt=""/>
 					<img className="pt-img4 animate-wave" src={animateWave} alt=""/>
 				</section>
-				
+				<section className="container">
+						
+									<section className=" row">
+										<div  className="tt-slider blog-slide slider-sp0 slick-arrow-none col-12 col-lg-4  mb-5 col-md-6">
+												<div className="">
+													<div className="blog-card" style={{display:"flex" , gap:'20px'}}>
+														<div>
+															<Link to="/blog-details">{/* <img src={item.thumb} alt=""/> */}
+																{/* <i className="fa-sharp fa-solid fa-truck-medical bg-blue-400 border-black rounded-circle" style={{padding:"30px",fontSize:"35px	"}}></i> */}
+																<FontAwesomeIcon className=" bg-blue-400 border-black rounded-circle" icon={faTruckMedical} style={{padding:"15px",fontSize:"35px	"}} />
+															</Link>
+														</div>
+														<div>
+															
+															<h5 className="post-title ms-4"><Link to="/blog-details">Services for 12 hours</Link></h5>		
+															<p style={{fontSize:"15px", marginLeft:"20px"}}>For speed and ease of access</p>
+														</div>
+													</div>	
+												</div>	
+										</div>
+										<div  className="tt-slider blog-slide slider-sp0 slick-arrow-none col-12 col-lg-4  mb-5 col-md-6">
+												<div className="">
+													<div className="blog-card" style={{display:"flex" , gap:'20px' }}>
+														<div>
+															<Link to="/blog-details" style={{zIndex:"15"}}>{/* <img src={item.thumb} alt=""/> */}
+																{/* <i className="fa-solid fa-flask-vial bg-blue-400 border-black rounded-circle" style={{padding:"30px",fontSize:"35px",zIndex:"15"}}></i> */}
+																<FontAwesomeIcon className=" bg-blue-400 border-black rounded-circle" icon={faFlaskVial} style={{padding:"15px",fontSize:"35px"}} />
+															</Link>
+														</div>
+														<div  >
+															
+															<h5 className="post-title ms-4"><Link to="/blog-details" style={{zIndex:"-1",fontSize:"16px"}}>Completed services</Link></h5>		
+															<p style={{fontSize:"15px", marginLeft:"20px" ,zIndex:"-1"}}>Effective and comprehensive laboratory services</p>
+															
+														</div>
+													</div>	
+												</div>	
+										</div>
+										<div  className="tt-slider blog-slide slider-sp0 slick-arrow-none col-12 col-lg-4  mb-5 col-md-6">
+												<div className="">
+													<div className="blog-card" style={{display:"flex" , gap:'20px'}}>
+														<div>
+															<Link to="/blog-details">{/* <img src={item.thumb} alt=""/> */}
+															
+
+																{/* <i className="fa-solid fa-user-nurse bg-blue-400 border-black rounded-circle" style={{padding:"30px",fontSize:"35px	"}}></i> */}
+																<FontAwesomeIcon className=" bg-blue-400 border-black rounded-circle" icon={faUserNurse} style={{padding:"15px",fontSize:"35px"}} />
+
+															</Link>
+														</div>
+														<div>
+															
+															<h5 className="post-title ms-4"><Link to="/blog-details">medical professionals</Link></h5>		
+															<p style={{fontSize:"15px", marginLeft:"20px"}}>Qualified and Certified Doctors</p>
+															
+														</div>
+													</div>	
+												</div>	
+										</div>
+									</section>
+				</section>
 			</>
 		);
 	}

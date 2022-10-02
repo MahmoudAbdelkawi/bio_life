@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams } from 'react-router-dom';
 
 // Layout
 import Header from "../layout/header2";
@@ -23,11 +23,71 @@ import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
 import testPic3 from "../../images/testimonials/pic3.jpg";
 import galleryPic2 from "../../images/gallery/pic2.jpg";
 import galleryPic5 from "../../images/gallery/pic5.jpg";
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 
-class BlogDetails extends Component{
+
+import {getBlog,putBlogLikes,getIsLiked} from '../../services/blogServices';
+import {getCurrentUser} from '../../services/loginServices';
+import { getBlogComments, postBlogComments } from "../../services/blogServices";
+let isLiked,likes;
+
+const BlogDetails = () => {
 	
-	render(){
+
+	const PF = "https://biollife.herokuapp.com/uploads/";
+	const [blog, setBlog] = useState([]);
+	 let id = useParams();
+	 id=id.id;
+	 const user = getCurrentUser();
+	 const createdAt = new Date(blog.createdAt).toLocaleDateString();
+	useEffect(() => {
+	  async function get() {
+		const blogResult = await getBlog(id);
+		setBlog(blogResult.data);
+		likes=blogResult.data.likes.length;
+	  }
+	  get();
+	  async function getLikes() {
+		const likeResult = await getIsLiked(id);
+		isLiked=likeResult.data;
+	   
+	  }
+	  if(user){
+	  getLikes();
+	  }  
+	
+	},[id,user]);
+
+
+	const [comments, setComments] = useState([]);
+	const [comment, setComment] = useState([]);
+	const [activeComment, setActiveComment] = useState(null);
+	useEffect(() => {
+	  async function get() {
+		const result = await getBlogComments(id);
+		setComments(result.data);
+		console.log("comments:",result.data)
+	  }
+	  get();
+	}, []);
+
+
+
+
+
+	const addComment = async (text) => {
+		await postBlogComments(text, id);
+		setComment(text);
+	//    toast.success('تم إضافة تعليقك');
+	   setTimeout(() => {
+		window.location.reload();
+	   }, 1000);
+		
+	  };
+
+
 		return (
 			<>
 				
@@ -64,24 +124,24 @@ class BlogDetails extends Component{
 										</div>
 										<div className="info-bx">
 											<ul className="post-meta">
-												<li className="author"><Link to="/blog-details"><img src={testPic3} alt=""/> Sonar Moyna</Link></li>
-												<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
+												<li className="author"><Link to="/blog-details"><img src={testPic3} alt=""/> {blog.author}</Link></li>
+												<li className="date"><i className="far fa-calendar-alt"></i> {createdAt}</li>
 											</ul>
 											<div className="ttr-post-title">
-												<h2 className="post-title">Precious Tips To Help You Get Better.</h2>
+												<h2 className="post-title">{blog.title}</h2>
 											</div>
 											<div className="ttr-post-text">
-												<p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
-												<blockquote className="wp-block-quote">
+												<p>{blog.subject}</p>
+												{/* <blockquote className="wp-block-quote">
 													<p>Once you’ve gotten all the titles and have chosen the best one, the next thing you need to do is to craft a magnetic content. Great content marketers excel at creating content.</p>
-												</blockquote>
-												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-												<ul className="wp-block-gallery columns-6 is-cropped">
+												</blockquote> */}
+												{/* <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
+												{/* <ul className="wp-block-gallery columns-6 is-cropped">
 													<li className="blocks-gallery-item"><img alt="" src={galleryPic2}/></li>
 													<li className="blocks-gallery-item"><img alt="" src={galleryPic5}/></li>
-												</ul>
-												<p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
-												<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+												</ul> */}
+												{/* <p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
+												<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p> */}
 											</div>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
@@ -90,6 +150,18 @@ class BlogDetails extends Component{
 													<Link to="#">Growth</Link> 
 													<Link to="#">Life</Link> 
 												</div>
+
+												<div className="post-tags">
+													<strong>Like:</strong>
+	
+
+												{true&&(
+														<i className={isLiked === 'nothing'? 'far fa-heart':'fas fa-heart liked'} id="like" onClick={()=>{putBlogLikes(id);window.location.reload()}}>
+														{likes=likes === 0?'':likes}</i>
+													)}
+</div>
+
+
 												<div className="share-post ml-auto">
 													<ul className="social-media mb-0">
 														<li><strong>Share:</strong></li>
@@ -98,6 +170,7 @@ class BlogDetails extends Component{
 														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
 														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
 													</ul>
+													
 												</div>
 											</div>
 										</div>
@@ -107,13 +180,15 @@ class BlogDetails extends Component{
 									
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
-											<h4 className="widget-title">8 Comments</h4>
+											<h4 className="widget-title">{comments.length} Comments</h4>
 											
 											<div className="clearfix">
 												
-												<CommentList />
+												{
+													comments.map(comment=><CommentList user={comment.user} comment={comment.comment} />)
+												}
 												
-												<CommentRespond />
+												<CommentRespond handleSubmit={addComment} />
 												
 											</div>
 										</div>
@@ -142,7 +217,7 @@ class BlogDetails extends Component{
 				
 			</>
 		);
-	}
+	
 }
 
 export default BlogDetails;

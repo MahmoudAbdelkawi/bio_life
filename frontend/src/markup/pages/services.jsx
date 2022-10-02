@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-import { getServices } from "../../services/serviceServices";
+// import { getServices } from "../../services/serviceServices";
 // Layout
 import Header from "../layout/header2";
 import Footer from "../layout/footer";
@@ -18,19 +18,22 @@ import plusBlue from "../../images/shap/plus-blue.png";
 import ServiceCard from '../elements/serviceCard';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 
 const Services =()=>{
 	  // const PF = "https://biollife.herokuapp.com/uploads/";
-	  const [services, setServices] = useState([]);
-	  useEffect(() => {
-		async function get() {
-		  const serviceResult = await getServices();
-		  setServices(serviceResult.data);
-		  console.log(serviceResult.data)
-		}
-		get();
-	  }, []);
+	//   const [services, setServices] = useState([]);
+	//   useEffect(() => {
+	// 	async function get() {
+	// 	  const serviceResult = await getServices();
+	// 	  setServices(serviceResult.data);
+	// 	  console.log(serviceResult.data)
+	// 	}
+	// 	get();
+	//   }, []);
+	const isEnglish = useSelector((state)=>state.lang)
+	console.log(isEnglish)
 
 		return (
 			<>
@@ -59,8 +62,9 @@ const Services =()=>{
 					</div>
 					
 
-					{services.map(service=>(<ServiceCard id={service._id} image={service.image} title={service.title} points={service.points} />))}
 
+					<ServiceCard />
+				
 
 
 

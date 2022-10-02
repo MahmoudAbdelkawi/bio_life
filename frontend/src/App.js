@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {createContext, useState} from 'react';
 import Markup from './markup/markup';
 
 // Slick Carousel
@@ -13,11 +13,17 @@ import "./vendor/themify/themify-icons.css";
 // StyleSheet
 import './App.scss';
 
+import LanguageContext from './context/LanguageContext';
+
+
 function App() {
+	const [isEnglish, setIsEnglish] = useState(true);
 	return (
+		<LanguageContext.Provider value={{isEnglish , setIsEnglish}}>
 		<div className="page-wraper">
 			<Markup />
 		</div>
+		</LanguageContext.Provider>
 	);
 }
 

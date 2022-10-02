@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 import testPic1 from "../../images/testimonials/pic1.jpg";
 import testPic2 from "../../images/testimonials/pic2.jpg";
 
-class CommentList extends Component{
-	render(){
+const CommentList = ({user , comment}) => {
 		return(
 			<>
 				<ol className="comment-list">
@@ -15,15 +14,15 @@ class CommentList extends Component{
 							<div className="comment-author vcard">
 								<img className="avatar photo" src={testPic1} alt=""/>
 								<div className="clearfix">
-									<cite className="fn">George</cite> 
+									<cite className="fn">{user.username}</cite> 
 									<span className="says">says:</span>
 									<div className="comment-meta"> <Link to="#">May 09, 2021 at 10:45 am</Link> </div>
 								</div>
 							</div>
-							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-							<div className="reply"> <Link to="#" className="comment-reply-link">Reply</Link> </div>
+							<p>{comment}</p>
+							{/* <div className="reply"> <Link to="#" className="comment-reply-link">Reply</Link> </div> */}
 						</div>
-						<ol className="children">
+						{/* <ol className="children">
 							<li className="comment odd parent">
 								<div className="comment-body">
 									<div className="comment-author vcard"> 
@@ -38,7 +37,7 @@ class CommentList extends Component{
 									<div className="reply"> <Link to="#" className="comment-reply-link">Reply</Link></div>
 								</div>
 							</li>
-						</ol>
+						</ol> */}
 					</li>
 					<li className="comment">
 						<div className="comment-body">
@@ -72,7 +71,7 @@ class CommentList extends Component{
 				
 			</>
 		);
-	}
+	
 }
 
 export default CommentList;

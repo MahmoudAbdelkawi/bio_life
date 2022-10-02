@@ -117,11 +117,13 @@ const Team = () => {
 													<h4 className="title">{team.name}</h4>
 													<span className="text-secondary">{team.position}</span>
 												</div>
-												<ul className="social-media">
+												<ul className="social-media" style={{marginBottom:'20px'}}>
 													<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
 													<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></a></li>
 													<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+													<li><a rel="noreferrer" target="_blank" href={`mailto: ${team.email}`}><i class="far fa-envelope"></i></a></li>
 												</ul>
+												<Link  to={`/doctor-details/${team._id}`}>Read More</Link>
 											</div>
 										</div>
 									</div>

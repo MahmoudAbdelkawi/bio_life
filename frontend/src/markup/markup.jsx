@@ -11,6 +11,7 @@ import AboutUs from './pages/about-us';
 import Team from './pages/team';
 import Services from './pages/services';
 import ServiceDetail from './pages/service-detail';
+import DoctorDetails from './pages/doctor-details';
 import FormLogin from './pages/form-login';
 import FormRegister from './pages/form-register';
 import FormForgetPassword from './pages/form-forget-password';
@@ -33,8 +34,9 @@ class Markup extends Component{
 						<Route path='/' exact component={Index} />
 						<Route path='/about-us' exact component={AboutUs} /> 
 						<Route path='/team' exact component={Team} />
+						<Route path='/team/:id' exact component={BlogDetails} />
 						<Route path='/services' exact component={Services} />
-						<Route path='/service-detail' exact component={ServiceDetail} />
+						<Route path='/doctor-details/:id' exact component={DoctorDetails} />
 						<Route path='/offers' exact component={Offers} />
 						<Route path='/OfferDetail' exact component={OfferDetail} />
 						<Route path='/service-detail' exact component={ServiceDetail} />

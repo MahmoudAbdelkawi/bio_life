@@ -5,6 +5,8 @@ import Sticky from 'react-stickynode';
 // Images
 import logo from '../../images/logo.png';
 import logoWhite from '../../images/logo-white.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 class Header extends Component{
 	
@@ -77,7 +79,8 @@ class Header extends Component{
 									<ul>
 										<li className="search-btn"><button id="quikSearchBtn" type="button" className="btn-link"><i className="las la-search"></i></button></li>
 										<li className="num-bx"><a href="tel:(+01)999888777"><i className="fas fa-phone-alt"></i> (+01) 999 888 777</a></li>
-										<li className="btn-area"><Link to="/contact-us" className="btn btn-primary shadow">CONTACT US <i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+										<li className="btn-area"><Link to="/form-login" className="btn btn-primary shadow">Login 
+										<FontAwesomeIcon className="ms-2" icon={faUser}/></Link></li>
 									</ul>
 								</div>
 								<div className="menu-links navbar-collapse collapse justify-content-end" id="menuDropdown">
