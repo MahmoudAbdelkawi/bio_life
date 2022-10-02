@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
 import {Link, useParams} from 'react-router-dom';
 import {Accordion} from 'react-bootstrap';
 
@@ -23,10 +23,11 @@ import { getMember } from "../../services/membersServices";
 
 import teamMember1 from "../../images/team/member1.jpg";
 
-
+import LanguageContext from '../../context/LanguageContext';
 
 
 const DoctorDetails = () => {
+	const {isEnglish} = useContext(LanguageContext)
 	
     const [member, setMember] = useState([]);
 	let { id } = useParams();

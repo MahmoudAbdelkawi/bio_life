@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 // Layout
@@ -25,7 +25,7 @@ import { getMembers } from "../../services/membersServices";
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-
+import LanguageContext from '../../context/LanguageContext';
 
 
 // Team Content
@@ -63,6 +63,7 @@ const content = [
 ]
 
 const Team = () => {
+	const {isEnglish} = useContext(LanguageContext)
 	const [teams, setTeams] = useState([]);
   // const PF = "https://biollife.herokuapp.com/uploads/";
   useEffect(() => {
@@ -85,7 +86,7 @@ const Team = () => {
 						<div className="page-banner" style={{backgroundImage: "url("+bnrImg1+")"}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h1>Our Team</h1>
+									<h1>{isEnglish ? "Our Team" : "فريقنا"}</h1>
 									<nav aria-label="breadcrumb" className="breadcrumb-row">
 										<ul className="breadcrumb">
 											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
@@ -102,7 +103,7 @@ const Team = () => {
 					
 					<section className="section-area section-sp1 team-wraper">
 						<div className="container">
-							<div className="row">
+							<div className="row" style={{direction:isEnglish ? 'ltr':'rtl'}}>
 								{teams.map((team) =>(
 									<div className="col-lg-4 col-sm-6">
 										<div className="team-member mb-30">
@@ -123,7 +124,7 @@ const Team = () => {
 													<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
 													<li><a rel="noreferrer" target="_blank" href={`mailto: ${team.email}`}><i class="far fa-envelope"></i></a></li>
 												</ul>
-												<Link  to={`/doctor-details/${team._id}`}>Read More</Link>
+												<Link  to={`/doctor-details/${team._id}`}>{isEnglish?"Read More":"اقرأ المزيد"}</Link>
 											</div>
 										</div>
 									</div>

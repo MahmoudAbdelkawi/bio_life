@@ -85,10 +85,10 @@ const { isEnglish , setIsEnglish} = useContext(LanguageContext)
 									<ul>
 										<li className="search-btn"><button id="quikSearchBtn" type="button" className="btn-link"><i className="las la-search"></i></button></li>
 										<li className="num-bx"><a href="tel:(+01)999888777"><i className="fas fa-phone-alt"></i> (+01) 999 888 777</a></li>
-										<li className="btn-area"><Link to="/form-login" className="btn btn-primary shadow">Login 
+										<li className="btn-area"><Link to="/form-login" className="btn btn-outline-primary shadow">Login 
 										<FontAwesomeIcon className="ms-2" icon={faUser}/></Link></li>
-
-										<li className="btn-area" onClick={()=>setIsEnglish( !isEnglish )}>change lang</li>
+										<li className="btn-area btn btn-outline-primary shadow ms-1" style={{fontSize:'12px'}} onClick={()=>setIsEnglish( !isEnglish )}>{isEnglish ? 'english' :'العربية'}</li>
+									
 									</ul>
 								</div>
 								<div className="menu-links navbar-collapse collapse justify-content-end" id="menuDropdown">
