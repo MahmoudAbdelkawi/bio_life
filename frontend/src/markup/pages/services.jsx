@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
 import { Link } from 'react-router-dom';
 // import { getServices } from "../../services/serviceServices";
 // Layout
@@ -19,10 +19,10 @@ import ServiceCard from '../elements/serviceCard';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
+import LanguageContext from '../../context/LanguageContext';
 
 const Services =()=>{
-	  // const PF = "https://biollife.herokuapp.com/uploads/";
+	// const PF = "https://biollife.herokuapp.com/uploads/";
 	//   const [services, setServices] = useState([]);
 	//   useEffect(() => {
 	// 	async function get() {
@@ -32,25 +32,23 @@ const Services =()=>{
 	// 	}
 	// 	get();
 	//   }, []);
-	const isEnglish = useSelector((state)=>state.lang)
-	console.log(isEnglish)
-
+	const {isEnglish} = useContext(LanguageContext)	
 		return (
 			<>
 				
 				<Header />
 				
-				<div className="page-content bg-white">
+				<div className="page-content bg-white" >
 					
 					<div className="banner-wraper">
 						<div className="page-banner" style={{backgroundImage: "url("+bnrImg1+")"}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h1>Services</h1>
+									<h1>{isEnglish ? "Services" :"الخدمات"}</h1>
 									<nav aria-label="breadcrumb" className="breadcrumb-row">
 										<ul className="breadcrumb">
-											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
-											<li className="breadcrumb-item active" aria-current="page">Services</li>
+											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> {isEnglish ? "Home" : "الرئيسية"}</Link></li>
+											<li className="breadcrumb-item active" aria-current="page">{isEnglish ? "Services" :"الخدمات"}</li>
 										</ul>
 									</nav>
 								</div>
@@ -70,7 +68,7 @@ const Services =()=>{
 
 					<section className="section-area section-sp1">
 						<div className="container">
-							<div className="row">
+							<div className="row" style={{direction:isEnglish?"ltr":"rtl"}}>
 								<div className="col-lg-4 col-md-6 mb-30">
 									<div className="feature-container feature-bx2 feature1">
 										<div className="feature-box-xl mb-20">
@@ -85,9 +83,9 @@ const Services =()=>{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h3 className="ttr-title">Diagnostics</h3>
+											<h3 className="ttr-title">{isEnglish?"Diagnostics":"التشخيص"}</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-detail" className="btn btn-primary light">{isEnglish?"View More":"اقرا المزيد"}</Link>
 										</div>
 									</div>
 								</div>
@@ -105,9 +103,10 @@ const Services =()=>{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h3 className="ttr-title">Treatment</h3>
+											<h3 className="ttr-title">{isEnglish?"Treatment":"علاج"}</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-detail" className="btn btn-primary light">{isEnglish?"View More":"اقرا المزيد"}</Link>
+
 										</div>
 									</div>
 								</div>
@@ -125,9 +124,10 @@ const Services =()=>{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h3 className="ttr-title">Surgery</h3>
+											<h3 className="ttr-title">{isEnglish?"Surgery":"جراحة"}</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-detail" className="btn btn-primary light">{isEnglish?"View More":"اقرا المزيد"}</Link>
+
 										</div>
 									</div>
 								</div>
@@ -145,9 +145,9 @@ const Services =()=>{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h3 className="ttr-title">Emergency</h3>
+											<h3 className="ttr-title">{isEnglish?"Emergency":"طارئ"}</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-detail" className="btn btn-primary light">{isEnglish?"View More":"اقرا المزيد"}</Link>
 										</div>
 									</div>
 								</div>
@@ -162,9 +162,9 @@ const Services =()=>{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h3 className="ttr-title">Vaccine</h3>
+											<h3 className="ttr-title">{isEnglish?"Vaccine":"مصل"}</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-detail" className="btn btn-primary light">{isEnglish?"View More":"اقرا المزيد"}</Link>
 										</div>
 									</div>
 								</div>
@@ -180,9 +180,10 @@ const Services =()=>{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h3 className="ttr-title">Qualified Doctors</h3>
+											<h3 className="ttr-title">{isEnglish?"Qualified Doctors":"أطباء مؤهلين"}</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-detail" className="btn btn-primary light">{isEnglish?"View More":"اقرا المزيد"}</Link>
+
 										</div>
 									</div>
 								</div>
@@ -192,7 +193,7 @@ const Services =()=>{
 					
 					<FeatureSection3 />
 					
-					<TeamSection />
+					{/* <TeamSection /> */}
 					
 					<LatestNewsSection />
 					

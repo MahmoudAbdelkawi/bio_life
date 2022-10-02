@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
 import { Link } from 'react-router-dom';
 
 // Layout
@@ -14,11 +14,13 @@ import icon3 from "../../images/icon/icon3.png";
 import animateWave from "../../images/shap/wave-blue.png";
 import animate2 from "../../images/shap/circle-dots.png";
 import animateRotate from "../../images/shap/plus-blue.png";
+import LanguageContext from '../../context/LanguageContext';
 
 
-class ContactUs extends Component{
+const ContactUs  = ()=>{
+	const {isEnglish} = useContext(LanguageContext)	
 	
-	render(){
+
 		return (
 			<>
 				
@@ -30,11 +32,11 @@ class ContactUs extends Component{
 						<div className="page-banner banner-lg contact-banner" style={{backgroundImage: "url("+bnrImg1+")"}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h1>Contact Us</h1>
+									<h1>{isEnglish ? "Contact Us" :"تواصل معنا"}</h1>
 									<nav aria-label="breadcrumb" className="breadcrumb-row">
 										<ul className="breadcrumb">
-											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
-											<li className="breadcrumb-item active" aria-current="page">Contact Us</li>
+											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> {isEnglish ? "Home" : "الرئيسية"}</Link></li>
+											<li className="breadcrumb-item active" aria-current="page">{isEnglish ? "Contact Us" :"تواصل معنا"}</li>
 										</ul>
 									</nav>
 								</div>
@@ -45,33 +47,33 @@ class ContactUs extends Component{
 						</div>
 					</div>
 					
-					<section className="">
+					<section className="" style={{direction:isEnglish ? "ltr":"rtl" }}>
 						<div className="container">
 							<div className="contact-wraper">
 								<div className="row">
 									<div className="col-lg-6 mb-30">
-										<form className="form-wraper contact-form ajax-form">
+										<form className="form-wraper contact-form ajax-form ">
 											<div className="ajax-message"></div>
 											<div className="row">
 												<div className="form-group col-md-12">
-													<input name="name" type="text" required className="form-control" placeholder="Your Name"/>
+													<input name="name" type="text" required className="form-control" placeholder={`${isEnglish ? "Your Name" : "الاسم"}`}/>
 												</div>
 												<div className="form-group col-md-12">
-													<input name="email" type="email" required className="form-control" placeholder="Email"/>
+													<input name="email" type="email" required className="form-control" placeholder={`${isEnglish ? "Email" : "الحساب الالكتروني"}`}/>
 												</div>
 												<div className="form-group col-md-12">
-													<input name="phone" type="text" required className="form-control" placeholder="Phone Numbers"/>
+													<input name="phone" type="text" required className="form-control" placeholder={`${isEnglish ? "Phone Numbers " : "رقم الهاتف"}`}/>
 												</div>
 												<div className="form-group col-md-12">
 													<select className="form-select form-control">
-														<option selected>Selecty Department</option>
+														<option selected> {isEnglish ? "Select Department" : "حدد القسم"}</option>
 														<option value="1">One</option>
 														<option value="2">Two</option>
 														<option value="3">Three</option>
 													</select>
 												</div>
 												<div className="form-group col-md-12">
-													<textarea name="message" required className="form-control" placeholder="Type Message"></textarea>
+													<textarea name="message" required className="form-control" placeholder={isEnglish ? "Type Message" : "اترك تعليق"}></textarea>
 												</div>
 												<div className="col-lg-12">
 													<button name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit</button>
@@ -82,18 +84,18 @@ class ContactUs extends Component{
 									<div className="col-lg-6 mb-30">
 										<div className="contact-info ovpr-dark" style={{backgroundImage: "url("+pic1+")"}}>
 											<div className="info-inner">
-												<h4 className="title mb-30">Contact Us For Any Informations</h4>
+												<h4 className="title mb-30">{isEnglish ? "Contact Us For Any Informations " : "اتصل بنا للحصول على أي معلومات"}</h4>
 												<div className="icon-box">
-													<h6 className="title"><i className="ti-map-alt"></i>Location</h6>		
-													<p>2005 Stokes Isle Apt. 896, Venaville 10010, USA</p>
+													<h6 className="title"><i className="ti-map-alt ps-2"></i> {isEnglish ? "Location" : "الموقع"}</h6>		
+													<p>{isEnglish ? "2005 Stokes Isle Apt. 896, Venaville 10010, USA " : "2005 Stokes Isle Apt. 896 ، فينافيل 10010 ، الولايات المتحدة الأمريكية"}</p>
 												</div>
 												<div className="icon-box">
-													<h6 className="title"><i className="ti-id-badge"></i>Email &amp; Phone</h6>		
+													<h6 className="title"><i className="ti-id-badge ps-2"></i>{isEnglish ? "Email" : "الحساب الالكتروني"} &amp;  {isEnglish ? "Phone" : "رقم الهاتف"}</h6>		
 													<Link to="#" className="text-white">info@yourdomain.com</Link>
 													<p>(+68) 120034509</p>
 												</div>
 												<div className="icon-box">
-													<h6 className="title"><i className="ti-world"></i>Follow Us</h6>
+													<h6 className="title"><i className="ti-world ps-2"></i>{isEnglish ? "Follow Us" : "تابعنا"}</h6>
 													<ul className="social-media">
 														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
 														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></a></li>
@@ -110,14 +112,14 @@ class ContactUs extends Component{
 					
 					<section className="section-area section-sp1">
 						<div className="container">
-							<div className="row">
+							<div className="row" style={{direction : isEnglish?"ltr" : "rtl"}}>
 								<div className="col-lg-4 col-md-6 mb-30">
 									<div className="feature-container feature-bx4 feature4">
 										<div className="icon-md feature-icon">
 											<img src={icon1} alt=""/>
 										</div>
 										<div className="icon-content">
-											<h5 className="ttr-title">Contact Number</h5>
+											<h5 className="ttr-title">{isEnglish?"Contact Number" : "رقم الاتصال"}</h5>
 											<p>+001 123 456 790</p>
 											<p>+002 3424 44 00</p>
 										</div>
@@ -129,7 +131,7 @@ class ContactUs extends Component{
 											<img src={icon3} alt=""/>
 										</div>
 										<div className="icon-content">
-											<h5 className="ttr-title">Email Address</h5>
+											<h5 className="ttr-title"> {isEnglish?"Email Address" : "عنوان البريد الالكترونى"}</h5>
 											<p>info@yourdomain.com</p>
 											<p>example@support.com</p>
 										</div>
@@ -141,7 +143,7 @@ class ContactUs extends Component{
 											<img src={icon2} alt=""/>
 										</div>
 										<div className="icon-content">
-											<h5 className="ttr-title">Address</h5>
+											<h5 className="ttr-title">{isEnglish?"Address" : "العنوان"}</h5>
 											<p>2005 Stokes Isle Apt. 896, Venaville 10010, USA</p>
 										</div>
 									</div>
@@ -157,6 +159,6 @@ class ContactUs extends Component{
 			</>
 		);
 	}
-}
+
 
 export default ContactUs;

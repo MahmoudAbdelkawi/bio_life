@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -16,15 +16,17 @@ import ptImg1 from '../../images/shap/wave-orange.png';
 import ptImg2 from '../../images/shap/circle-small-blue.png';
 import ptImg4 from '../../images/shap/square-dots-orange.png';
 import ptImg5 from '../../images/shap/square-blue.png';
+import LanguageContext from '../../context/LanguageContext';
 
 
 const AboutSection = ()=> {
+	const {isEnglish} = useContext(LanguageContext)	
 	
 		return(
 			<>
 				<section className="section-sp1 about-area">
 					<div className="container">
-						<div className="row align-items-center">
+						<div className="row align-items-center" style={{direction:isEnglish?"ltr":"rtl"}}>
 							<div className="col-lg-6 mb-30">
 								<div className="about-thumb-area">
 									<ul>
@@ -35,13 +37,13 @@ const AboutSection = ()=> {
 									</ul>
 								</div>
 							</div>
-							<div className="col-lg-6 mb-30">
+							<div className="col-lg-6 mb-30" >
 								<div className="heading-bx">
-									<h6 className="title-ext text-secondary">About Us</h6>
-									<h2 className="title">The Great Place Of Medical Hospital Center</h2>
-									<p>We provide the special tips and advice’s of heath care treatment and high level of best technology involve in the our hospital.</p>
+									<h6 className="title-ext text-secondary">{isEnglish?"About Us":"من نحن"}</h6>
+									<h2 className="title">{isEnglish?"The Great Place Of Medical Hospital Center":"المكان العظيم لمركز المستشفى الطبي"}</h2>
+									<p>{isEnglish?"We provide the special tips and advice’s of heath care treatment and high level of best technology involve in the our hospital.":"نحن نقدم النصائح والإرشادات الخاصة لعلاج الرعاية الصحية ومستوى عالٍ من أفضل التقنيات المستخدمة في مستشفانا."}</p>
 								</div>
-								<div className="row">
+								<div className="row" style={{direction:"ltr"}}>
 									<div className="col-lg-6 col-sm-6 mb-30 mb-sm-20">
 										<div className="feature-container feature-bx1 feature1">
 											<div className="icon-md">
@@ -58,7 +60,7 @@ const AboutSection = ()=> {
 												
 											</div>
 											<div className="icon-content">
-												<h4 className="ttr-title">Variaty</h4>
+												<h4 className="ttr-title">{isEnglish?"Variaty":"التنوعية"}</h4>
 											</div>
 										</div>
 									</div>
@@ -76,7 +78,7 @@ const AboutSection = ()=> {
 												</span> 
 											</div>
 											<div className="icon-content">
-												<h4 className="ttr-title">Modern Techniques </h4>
+												<h4 className="ttr-title">{isEnglish?"Modern Techniques ":"التقنيات الحديثة"}</h4>
 											</div>
 										</div>
 									</div>
@@ -94,7 +96,7 @@ const AboutSection = ()=> {
 												</span> 
 											</div>
 											<div className="icon-content">
-												<h4 className="ttr-title">Years Expirences</h4>
+												<h4 className="ttr-title">{isEnglish?"Years Expirences":"سنوات من الخبرة"}</h4>
 											</div>
 										</div>
 									</div>
@@ -111,12 +113,12 @@ const AboutSection = ()=> {
 												</span> 
 											</div>
 											<div className="icon-content">
-												<h4 className="ttr-title">Our Team</h4>
+												<h4 className="ttr-title">{isEnglish?"Our Team":"فريقنا"}</h4>
 											</div>
 										</div>
 									</div>
 								</div>
-								<Link to="/about-us" className="btn btn-primary shadow">Read More</Link>
+								<Link to="/about-us" className="btn btn-primary shadow">{isEnglish?"Read More":"اقرأ المزيد"}</Link>
 							</div>
 						</div>
 					</div>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import { getServices } from "../../services/serviceServices";
@@ -20,6 +20,7 @@ import blogGridPic4 from "../../images/blog/grid/pic4.jpg"
 import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
 import { useState } from 'react';
 import { useEffect } from 'react';
+import LanguageContext from '../../context/LanguageContext';
 
 // Team Content
 const content = [
@@ -61,6 +62,7 @@ const content = [
 ]
 
 const ServiceCard = () =>{
+	const {isEnglish} = useContext(LanguageContext)	
 
  // const PF = "https://biollife.herokuapp.com/uploads/";
  const [services, setServices] = useState([]);
@@ -100,7 +102,7 @@ const ServiceCard = () =>{
 		return(
 			<>
 				
-				<section className="section-area section-sp1 blog-area" style={{backgroundImage: "url("+lingBg2+")", backgroundPosition: "center", backgroundSize: "cover",}}>
+				<section className="section-area section-sp1 blog-area" style={{backgroundImage: "url("+lingBg2+")", backgroundPosition: "center", backgroundSize: "cover",direction:isEnglish?"ltr":"rtl"}}>
 					<div className="container m-auto row">
 						{/* <Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none"> */}
 								{services.map(service=>(<div className="slider-item col-lg-4 col-md-6 mb-30" key={service._id}>
@@ -115,7 +117,7 @@ const ServiceCard = () =>{
                                                 
                                             </Link>
 										</div>
-										<div className="post-info" style={{direction:'rtl' }}>
+										<div className="post-info" style={{direction:isEnglish?"ltr":"rtl"}}>
 											{/* <ul className="post-meta">
 												<li className="author"><Link to="/blog-details"><img src={item.authorPic} alt=""/>{item.author}</Link></li>
 												<li className="date"><i className="far fa-calendar-alt"></i>{item.date}</li>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
@@ -22,6 +22,7 @@ import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFlask, faFlaskVial, faTruck, faTruckMedical, faUserNurse } from '@fortawesome/free-solid-svg-icons';
 
+import LanguageContext from '../../context/LanguageContext';
 
 
 // Team Content
@@ -63,9 +64,10 @@ const content = [
 	},
 ]
 
-class LatestNewsSection extends Component{
-	render(){
-			
+const LatestNewsSection =()=>{
+	
+		const {isEnglish} = useContext(LanguageContext)	
+		
 		const settings = {
 			dots: false,
 			infinite: true,
@@ -124,7 +126,7 @@ class LatestNewsSection extends Component{
 				</section>
 				<section className="container">
 						
-									<section className=" row">
+									<section className=" row" style={{direction:isEnglish?"ltr":"rtl"}}>
 										<div  className="tt-slider blog-slide slider-sp0 slick-arrow-none col-12 col-lg-4  mb-5 col-md-6">
 												<div className="">
 													<div className="blog-card" style={{display:"flex" , gap:'20px'}}>
@@ -136,8 +138,8 @@ class LatestNewsSection extends Component{
 														</div>
 														<div>
 															
-															<h5 className="post-title ms-4"><Link to="/blog-details">Services for 12 hours</Link></h5>		
-															<p style={{fontSize:"15px", marginLeft:"20px"}}>For speed and ease of access</p>
+															<h5 className="post-title ms-4"><Link to="/blog-details"> {isEnglish?"Services for 12":"خدمه 12 ساعة"}</Link></h5>		
+															<p style={{fontSize:isEnglish?"15px":"18px", marginLeft:"20px"}}>{isEnglish?"For speed and ease of access":"لسرعة وسهولة الوصول"}</p>
 														</div>
 													</div>	
 												</div>	
@@ -153,8 +155,8 @@ class LatestNewsSection extends Component{
 														</div>
 														<div  >
 															
-															<h5 className="post-title ms-4"><Link to="/blog-details" style={{zIndex:"-1",fontSize:"16px"}}>Completed services</Link></h5>		
-															<p style={{fontSize:"15px", marginLeft:"20px" ,zIndex:"-1"}}>Effective and comprehensive laboratory services</p>
+															<h5 className="post-title ms-4"><Link to="/blog-details" style={{zIndex:"-1",fontSize:"16px"}}> {isEnglish?"Completed services":"الخدمات المكتملة"}</Link></h5>		
+															<p style={{fontSize:isEnglish?"15px":"21px", marginLeft:"20px" ,zIndex:"-1"}}> {isEnglish?"Effective and comprehensive laboratory services":"خدمات معملية فعالة وشاملة"}</p>
 															
 														</div>
 													</div>	
@@ -174,8 +176,8 @@ class LatestNewsSection extends Component{
 														</div>
 														<div>
 															
-															<h5 className="post-title ms-4"><Link to="/blog-details">medical professionals</Link></h5>		
-															<p style={{fontSize:"15px", marginLeft:"20px"}}>Qualified and Certified Doctors</p>
+															<h5 className="post-title ms-4"><Link to="/blog-details">{isEnglish?"medical professionals":"محترفين طبيا"}</Link></h5>		
+															<p style={{fontSize:isEnglish?"15px":"22px", marginLeft:"20px"}}> {isEnglish?"Qualified and Certified Doctors":"أطباء مؤهلين ومعتمدين"}</p>
 															
 														</div>
 													</div>	
@@ -185,7 +187,7 @@ class LatestNewsSection extends Component{
 				</section>
 			</>
 		);
-	}
+
 }
 
 export default LatestNewsSection;

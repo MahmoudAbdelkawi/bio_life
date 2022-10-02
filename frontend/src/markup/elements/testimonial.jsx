@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {  useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
@@ -14,11 +14,11 @@ import plusOrange from "../../images/shap/plus-orange.png"
 import squareBlue from "../../images/shap/square-blue.png"
 import circleDots from "../../images/shap/circle-dots.png"
 import circleOrange2 from "../../images/shap/circle-orange-2.png"
+import LanguageContext from '../../context/LanguageContext';
 
-class testimonialSection extends Component{
-	
-	render(){
-			
+const TestimonialSection =()=>{
+
+	const {isEnglish} = useContext(LanguageContext)	
 		const settings = {
 			dots: false,
 			infinite: true,
@@ -34,8 +34,8 @@ class testimonialSection extends Component{
 				<section className="section-area section-sp3 testimonial-wraper">
 					<div className="container">
 						<div className="heading-bx text-center">
-							<h6 className="title-ext text-secondary">Testimonial</h6>
-							<h2 className="title m-b0">See What Are The Patients <br/>Saying About us</h2>
+							<h6 className="title-ext text-secondary"> {isEnglish? "Testimonial" : "شهادة"} </h6>
+							<h2 className="title m-b0">{isEnglish ? "See What Are The Patients Saying About us" : "انظر ماذا يقول المرضى عنا"}</h2>
 						</div>
 						<div className="row align-items-center">
 							<div className="col-lg-6 text-center">
@@ -136,6 +136,6 @@ class testimonialSection extends Component{
 			</>
 		);
 	}
-}
 
-export default testimonialSection;
+
+export default TestimonialSection;

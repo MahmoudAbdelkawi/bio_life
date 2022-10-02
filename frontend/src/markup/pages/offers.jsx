@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 // Layout
@@ -25,50 +25,52 @@ import plusBlue from "../../images/shap/plus-blue.png";
 import aboutThumb1 from '../../images/about/bio-1.jpg';
 import aboutThumb2 from '../../images/about/bio-2.jpg';
 import aboutThumb3 from '../../images/about/bio-3.jpg';
+import LanguageContext from '../../context/LanguageContext';
 
 
-const content = [
-	{ 
-		thumb: blogGridPic1,
-		authorPic: aboutThumb1,
-		author: "khaled Halawani	",
-		title: "Can you get a diflucan prescription online?",		
-		date: "21 July 2021",
-	},
-	{ 
-		thumb: blogGridPic2,
-		authorPic: aboutThumb2,
-		author: "Peter Packer",
-		title: "Can you get a diflucan prescription online?",		
-		date: "20 July 2021",
-	},
-	{ 
-		thumb: blogGridPic3,
-		authorPic: aboutThumb3,
-		author: "Sonar Moyna",
-		title: "Why Is Skin Surgeon Considered Underrated",		
-		date: "19 July 2021",
-	},
-	{ 
-		thumb: blogGridPic4,
-		authorPic: testPic4,
-		author: "Kalina Mollika",
-		title: "Dental Care for Women is very important",		
-		date: "18 July 2021",
-	},
-	{ 
-		thumb: blogGridPic5,
-		authorPic: testPic5,
-		author: "Michel",
-		title: "Health Will Be A Thing Of The Past And Here's Why",		
-		date: "17 July 2021",
-	},
-]
 
-class Offers extends Component{
+
+const Offers =()=> {
 	
-	
-	render(){
+	const {isEnglish} = useContext(LanguageContext)	
+	const content = [
+		{ 
+			thumb: blogGridPic1,
+			authorPic: aboutThumb1,
+			author:isEnglish ? "khaled Halawani" : "خالد حلواني",
+			title:isEnglish ? "Can you get a diflucan prescription online?" : "هل يمكنك الحصول على وصفة طبية ديفلوكان على الإنترنت؟",		
+			date: "21 July 2021",
+		},
+		{ 
+			thumb: blogGridPic2,
+			authorPic: aboutThumb2,
+			author: isEnglish ?"Peter Packer":"بيتر باكر",
+			title: isEnglish ?"Can you get a diflucan prescription online?":"هل يمكنك الحصول على وصفة طبية ديفلوكان على الإنترنت؟",		
+			date: "20 July 2021",
+		},
+		{ 
+			thumb: blogGridPic3,
+			authorPic: aboutThumb3,
+			author:isEnglish? "Sonar Moyna" :"سونار موينا",
+			title:isEnglish ? "Why Is Skin Surgeon Considered Underrated":"لماذا يعتبر جراح الجلد الاستخفاف",		
+			date: "19 July 2021",
+		},
+		{ 
+			thumb: blogGridPic4,
+			authorPic: testPic4,
+			author: isEnglish ?"Kalina Mollika":"كالينا موليكا",
+			title:isEnglish ? "Dental Care for Women is very important":"العناية بالأسنان للنساء مهمة جدا",		
+			date: "18 July 2021",
+		},
+		{ 
+			thumb: blogGridPic5,
+			authorPic: testPic5,
+			author: isEnglish ?"Michel":"مايكل",
+			title: isEnglish ?"Health Will Be A Thing Of The Past And Here's Why":"ستكون الصحة شيئًا من الماضي وإليك السبب",		
+			date: "17 July 2021",
+		},
+	]
+
 		const settings = {
 			dots: false,
 			infinite: true,
@@ -101,11 +103,11 @@ class Offers extends Component{
 						<div className="page-banner" style={{backgroundImage: "url("+bnrImg1+")"}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h1>Offers</h1>
+									<h1> {isEnglish?"Offers":"العروض"}</h1>
 									<nav aria-label="breadcrumb" className="breadcrumb-row">
 										<ul className="breadcrumb">
-											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
-											<li className="breadcrumb-item active" aria-current="page">Offers</li>
+											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> {isEnglish?"Home":"الرئيسية"}</Link></li>
+											<li className="breadcrumb-item active" aria-current="page">{isEnglish?"Offers":"العروض"}</li>
 										</ul>
 									</nav>
 								</div>
@@ -122,7 +124,7 @@ class Offers extends Component{
 							
 							{content.map((item) =>(
 								<div className="slider-item col-lg-4 col-md-6 mb-30">
-									<div className="blog-card">
+									<div className="blog-card" style={{direction:isEnglish?"ltr":"rtl"}}>
 										<div className="post-media">
 											<Link ><img src={item.thumb} alt=""/></Link>
 										</div>
@@ -133,7 +135,7 @@ class Offers extends Component{
 											</ul>
 											<h5 className="post-title"><Link >{item.title}</Link></h5>		
 											<p className="">this is offer one </p>		
-											<Link to="/booking" className="btn btn-outline-primary btn-sm">Order Now <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+											<Link to="/booking" className="btn btn-outline-primary btn-sm"> {isEnglish? "Order Now":"اطلب الان"}<i className={`btn-icon-bx fas ${isEnglish ? "fa-chevron-right" : "fa-chevron-left"}`} style={{margin :isEnglish? "0 0 0 10px":"0 10px 0 0"}}></i></Link>
 											<span className='ms-4 text-decoration-line-through'>3500</span> <span>2500$</span>
 										</div>
 									</div>	
@@ -157,6 +159,6 @@ class Offers extends Component{
 			</>
 		);
 	}
-}
+
 
 export default Offers;
